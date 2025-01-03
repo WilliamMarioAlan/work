@@ -11,7 +11,7 @@ BUILDDIR = build
 # Files
 SOURCES = $(wildcard $(SRCDIR)/*.c)
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(BUILDDIR)/%.o, $(SOURCES))
-TARGET = $(BUILDDIR)/myprogram
+TARGET = ./exec
 
 # Default rule
 all: $(TARGET)
