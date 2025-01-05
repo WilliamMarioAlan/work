@@ -1,0 +1,5 @@
+*.sh
+.DS_Store
+.vscode/
+build/
+exec
