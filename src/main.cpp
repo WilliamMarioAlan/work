@@ -9,5 +9,6 @@ int main() {
 	// int n;
 	// scanf("%lf%d",&x,&n);
 	// printf("%f\n",calc_pow(x,n));
+	return 0;
 }
 
