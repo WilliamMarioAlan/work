@@ -1,7 +1,7 @@
 #!/bin/bash
 
  # 推送到远程仓库
-git push origin release 
+git push origin master 
 if [ $? -ne 0 ]; then
     echo "Push failed"
     exit 1
