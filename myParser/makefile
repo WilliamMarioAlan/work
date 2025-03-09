@@ -24,20 +24,22 @@ all: $(TARGET)
 
 # Link step
 $(TARGET): $(OBJECTS)
-	$(CXX) $(LDFLAGS) -o $@ $^
+	@$(CXX) $(LDFLAGS) -o $@ $^
 
 # Compile C++ files
 $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
-	mkdir -p $(BUILDDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@mkdir -p $(BUILDDIR)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Compile C files
 $(BUILDDIR)/%.o: $(SRCDIR)/%.c
-	mkdir -p $(BUILDDIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@mkdir -p $(BUILDDIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean
 clean:
-	rm -rf $(BUILDDIR) $(TARGET)
+	@rm -rf $(BUILDDIR) $(TARGET)
 
-.PHONY: all clean
+rebuild:clean all
+
+.PHONY: all clean rebuild
