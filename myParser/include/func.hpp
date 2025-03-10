@@ -25,6 +25,15 @@ M_SQRT2	1.414213562373095	根号2
 #include <map>
 
 
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
+
+
 /*
 C++ 会对函数名进行“名字修饰”，即编译器会改变函数的名称以支持函数重载和其他 C++ 特性。
 例如，C++ 会将函数名加上一些额外的信息（如参数类型）来支持函数重载。
@@ -36,14 +45,6 @@ extern "C" 告诉编译器这个函数遵循 C 语言的链接约定，而不是
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#include <math.h>
-#include <stdlib.h>
-#include <time.h>
-
 //common
 void inputArray(int arr[],int* n);
 void printArray(const int* arr,int n);

@@ -2,6 +2,7 @@
 #ifndef SCANNER_H
 #define SCANNER_H
 
+
 // 定义一个TokenType枚举，用于标记不同种类的Token
 typedef enum {
 	/* 单字符 Token */
@@ -98,12 +99,22 @@ typedef struct {
 	const char* start;	// start指向source中的字符，source为读入的源代码。
 	int length;		    // length表示这个Token的长度
 	int line;		    // line表示这个Token在源代码的哪一行, 方便后面的报错和描述Token
+
+	//int row column;
 } Token;	// 这个Token只涉及一个字符指针指向源代码的字符信息,没有在内部保存字符数据
+
+#ifdef _cplusplus
+extern "C" {
+#endif
 
 // 对 词法分析器Scanner 进行初始化 
 void initScanner(const char* source);	// 源代码字符串(这里涉及一个将源码转换成字符串的函数)
 
 // 核心API, 调用scanToken(), 就生产一个Token, 也就是源代码中下一段字符数据的Token
 Token scanToken();	// 当Token返回的是TOKEN_EOF时，源文件被消耗完毕，词法分析结束
+
+#ifdef _cplusplus
+}
+#endif
 
 #endif  // !SCANNER_H
