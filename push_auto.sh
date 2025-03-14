@@ -8,3 +8,4 @@ if [ $? -ne 0 ]; then
 else
     echo "Push successful"
 fi
+
